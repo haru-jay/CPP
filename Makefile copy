@@ -1,0 +1,71 @@
+NAME = minishell
+
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -g
+LIBFT_DIR = ./libft
+LIBFT = $(LIBFT_DIR)/libft.a
+
+SRC = \
+	main.c \
+	input_check.c \
+	input_quote.c \
+	input_quote2.c \
+	builtin.c \
+	builtin2.c \
+	exit_error.c \
+	minishell_utils.c \
+	prompt.c \
+	redirection.c \
+	redirection_utils.c \
+	redirection_utils2.c \
+	redirection_utils3.c \
+	signal_handler.c \
+	signal_set.c \
+	normalization.c \
+	nomalization_utils.c \
+	normalization_utils2.c \
+	env_utils.c \
+	str_utils.c \
+	env_utils2.c \
+	export_utils.c \
+	export_utils2.c \
+	export_utils3.c \
+	minishell_execve.c \
+	token_utils.c \
+	token_utils2.c \
+	token_utils3.c \
+	token_utils4.c \
+	pasing_token.c
+
+OBJS = $(SRC:.c=.o)
+
+# for macOS
+#%.o: %.c
+#			$(CC) $(CFLAGS) -c -o $@ $< -I/opt/homebrew/Cellar/readline/8.2.13/include
+# for Linux
+%.o: %.c
+		$(CC) $(CFLAGS) -c -o $@ $<
+
+all:		$(NAME) $(LIBFT)
+
+$(LIBFT):
+			$(MAKE) -C $(LIBFT_DIR)
+
+# for MacOS
+#$(NAME):	$(OBJS) $(LIBFT)
+#			$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) -L/opt/homebrew/Cellar/readline/8.2.13/lib -lreadline
+# for Linux
+$(NAME):	$(OBJS) $(LIBFT)
+			$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) -lreadline
+
+clean:
+			$(RM) $(OBJS)
+			$(MAKE) clean -C $(LIBFT_DIR)
+
+fclean:		clean
+			$(RM) $(NAME)
+			$(MAKE) fclean -C $(LIBFT_DIR)
+
+re:			fclean $(NAME)
+
+.PHONY:		all clean fclean re
