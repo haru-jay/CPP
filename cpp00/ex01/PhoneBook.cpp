@@ -1,36 +1,63 @@
-#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
-void ft_over_ten(std::string st)
+PhoneBook::PhoneBook(int loc)
 {
-	if (st.length() > 10)
+	size = 0;
+
+	list[loc++].Add();
+	while(true)
 	{
-		for (size_t i = 0; i < 9; i++)
-			std::cout << st[i];
-		std::cout << ".";
+		std::string cmd;
+		std::getline(std::cin, cmd);
+		if (loc == 8)
+			size = 1;
+		loc %= 8;
+		switch (ft_is_cmd(cmd))
+		{
+		case 1:
+			list[loc].Add();
+			loc++;
+			break;
+		case 2:
+			Search(loc);
+			break;
+		case 3:
+			return ;
+			break;
+		default:
+			std::cerr << "ERROR" << std::endl;
+			break;
+		}
+	}
+}
+
+void PhoneBook::Search(int loc)
+{
+	int idx = 0;
+	if (size == 1)
+	{
+		for (int i = 0; i < 8; i++)
+			list[i].Search();
+		print("INDEX");
+		std::cin >> idx;
+		if(idx >= 0 && idx <= 7)
+			list[idx].Search();
+		else
+			std::cerr << "ERROR" << std::endl;
+		std::cin.ignore(10000, '\n');
 	}
 	else
-		std::cout << st;
+	{
+		for (int i = 0; i < loc; i++)
+			list[i].Search();
+		print("INDEX");
+		std::cin >> idx;
+		if(idx >= 0 && idx <= 7)
+			list[idx].Search();
+		else
+			std::cerr << "ERROR" << std::endl;
+		std::cin.ignore(10000, '\n');
+	}
 }
 
-int ft_is_cmd(std::string s)
-{
-	if (s == "ADD")
-		return 1;
-	else if (s == "SEARCH")
-		return 2;
-	else if (s == "EXIT")
-		return 3;
-	else
-		return 0;
-}
-
-void print(const char *msg)
-{
-	std::cout << msg << std::endl;
-}
-
-int main()
-{
-	PhoneBook phone(0);
-	return 0;
-}
+PhoneBook::~PhoneBook(){};

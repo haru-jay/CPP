@@ -84,6 +84,7 @@ bool Account::makeWithdrawal( int withdrawal )
 	return true;
 }
 
+// std::cout << "[19920104_091532]"; // USING diff 
 void Account::_displayTimestamp( void )
 {
 	char buf[16];
@@ -91,7 +92,6 @@ void Account::_displayTimestamp( void )
 	time(&now);
 	std::strftime(buf, sizeof(buf), "%Y%m%d_%H%M%S", localtime(&now));
 	std::cout << "[" << buf << "]";
-	// std::cout << "[19920104_091532]"; // USING diff 
 }
 
 void Account::displayStatus( void ) const
