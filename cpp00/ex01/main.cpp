@@ -32,5 +32,7 @@ void print(const char *msg)
 int main()
 {
 	PhoneBook phone(0);
+
+	std::cout<< "aaa" << std::endl;
 	return 0;
 }
