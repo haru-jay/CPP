@@ -40,6 +40,12 @@ void PhoneBook::Search(int loc)
 			list[i].Search();
 		print("INDEX");
 		std::cin >> idx;
+		if(std::cin.fail())
+		{
+			std::cin.clear();
+			std::cin.ignore(10000, '\n');
+			std::cerr << "ERROR" << std::endl;
+		}
 		if(idx >= 0 && idx <= 7)
 			list[idx].Search();
 		else
@@ -52,6 +58,12 @@ void PhoneBook::Search(int loc)
 			list[i].Search();
 		print("INDEX");
 		std::cin >> idx;
+		if(std::cin.fail())
+		{
+			std::cin.clear();
+			std::cin.ignore(10000, '\n');
+			std::cerr << "ERROR" << std::endl;
+		}
 		if(idx >= 0 && idx <= 7)
 			list[idx].Search();
 		else
