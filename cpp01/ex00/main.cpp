@@ -5,4 +5,5 @@ int main()
 	Zombie *foo = newZombie("foo");
 	randomChump("zombie2");
 	delete foo;
+	return 0;
 }

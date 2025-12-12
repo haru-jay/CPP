@@ -2,6 +2,8 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
+Weapon HumanA::defaultWeapon("APPLE");
+HumanA::HumanA(std::string name): human_name(name), wp(defaultWeapon){}
 HumanA::HumanA(std::string name, Weapon &weapon): human_name(name), wp(weapon){}
 HumanA::~HumanA(){}
 

@@ -4,7 +4,7 @@ int main(int argc, char *argv[])
 {
 	if (argc != 4 || !argv[1] || !argv[2] || !argv[3])
 	{
-		std::cout << "Parameter error" << std::endl;
+		std::cerr << "Parameter error" << std::endl;
 		return 1;
 	}
 	std::string file_name = argv[1];
@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	std::string s2 = argv[3];
 	if (file_name.empty() || s1.empty())
 	{
-		std::cout << "Parameter is empty" << std::endl;
+		std::cerr << "Parameter is empty" << std::endl;
 		return 1;
 	}
 	std::string file_contents = "";
