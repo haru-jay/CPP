@@ -6,5 +6,3 @@ int main()
 	a.complain("debug");
 	a.complain("warning");
 }
-
-//harlFilter <- 실행파일 이름
