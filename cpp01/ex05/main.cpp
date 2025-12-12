@@ -8,9 +8,5 @@ int main()
 	a.complain("info");
 	a.complain("warning");
 	a.complain("error");
-
-	a.complain("debug");
-	a.complain("info");
-	a.complain("warning");
-	a.complain("error");
+	return 0;
 }

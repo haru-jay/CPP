@@ -1,9 +1,9 @@
-NAME = harlFilter
+NAME = Fixed
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -MMD -MP
 
-SRCS = main.cpp Harl.cpp
+SRCS = main.cpp Fixed.cpp
 SRCS_DIR = ./
 OBJS = $(SRCS_DIR)$(SRCS:.cpp=.o)
 OBJS_DIR = ./

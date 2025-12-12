@@ -2,7 +2,7 @@
 
 void Harl::complain( std::string level )
 {
-	std::string levels[4] = {"debug", "info", "warning", "error"};
+	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	int i;
 	for(i = 0; i < 4; i++)
 		if (level == levels[i])
