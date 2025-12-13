@@ -1,4 +1,4 @@
-# include "Point.hpp"
+# include "Vector.hpp"
 
 bool same_sign(Fixed s1, Fixed s2, Fixed s3) 
 {

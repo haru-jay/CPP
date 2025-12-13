@@ -2,7 +2,7 @@
 
 Fixed::Fixed(): number_value(0){}
 Fixed::~Fixed(){}
-Fixed::Fixed(const Fixed& rhs){this->number_value = rhs.number_value;}
+Fixed::Fixed(const Fixed& rhs){*this = rhs;}
 Fixed& Fixed::operator=(const Fixed& rhs)
 {
 	if (this != &rhs)

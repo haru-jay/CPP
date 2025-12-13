@@ -10,20 +10,11 @@ private:
 	Fixed v_y;
 public:
 	Vector(Point lhs, Point rhs);
+	Vector(const Vector &rhs);
+	Vector operator=(const Vector &rhs);
 	~Vector();
 
 	static Fixed crossProduct(Vector &lhs, Vector &rhs);
 };
-
-Vector::Vector(Point lhs, Point rhs): \
-		v_x(rhs.getValueX() - lhs.getValueX()), v_y(rhs.getValueY() - lhs.getValueY()){}
-Vector::~Vector(){}
-
-Fixed Vector::crossProduct(Vector &lhs, Vector &rhs)
-{
-	Fixed res(lhs.v_x * rhs.v_y - lhs.v_y * rhs.v_x);
-	return res;
-}
-
 
 #endif
