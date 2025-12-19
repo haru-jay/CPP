@@ -17,6 +17,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(const ClapTrap& rhs)
 {
+	std::cout << "[ClapTrap] Copy Constructor called" << std::endl;
 	*this = rhs;
 }
 
@@ -85,22 +86,7 @@ std::string ClapTrap::getName()
 }
 
 //setter
-void ClapTrap::setName(std::string name)
-{
-	this->name = name;
-}
-
 void ClapTrap::setEnergyPoint(int energy)
 {
 	this->energy_points = energy;
-}
-
-void ClapTrap::setAttackDamage(int damage)
-{
-	this->attack_damage = damage;
-}
-
-void ClapTrap::setHitPoint(int hit)
-{
-	this->hit_point = hit;
 }

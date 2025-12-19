@@ -85,11 +85,6 @@ std::string ClapTrap::getName()
 }
 
 //setter
-void ClapTrap::setName(std::string name)
-{
-	this->name = name;
-}
-
 void ClapTrap::setEnergyPoint(int energy)
 {
 	this->energy_points = energy;

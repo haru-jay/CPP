@@ -13,6 +13,7 @@ private:
 	int			attack_damage;
 public:
 	ClapTrap(std::string name);
+	ClapTrap(std::string name, int hit, int energy, int attack);
 	ClapTrap(const ClapTrap& rhs);
 	ClapTrap operator=(const ClapTrap& rhs);
 	~ClapTrap();
@@ -26,11 +27,7 @@ public:
 	int getHitPoint();
 	int getEnergyPoint();
 
-	void setName(std::string name);
 	void setEnergyPoint(int energy);
-	void setAttackDamage(int damage);
-	void setHitPoint(int hit);
-
 };
 
 #endif
